@@ -1,6 +1,13 @@
 # claude-respawn-plugin
 
-A Claude Code plugin that saves and restores session state across `/clear`. One command (`/respawn`) handles both directions — auto-detect when the signal is unambiguous, ask when not.
+```
+ ___ ___ ___ ___  _____      ___  _
+| _ \ __/ __| _ \/_\ \    / / \| |
+|   / _|\__ \  _/ _ \ \/\/ /| .` |
+|_|_\___|___/_|/_/ \_\_/\_/ |_|\_|
+```
+
+**Handoff across the `/clear` barrier in Claude Code.** One command (`/respawn`) handles both directions — auto-detect when the signal is unambiguous, ask when not.
 
 ## Why
 
@@ -14,6 +21,16 @@ Two payoffs from clearing deliberately:
 - **Higher output quality.** Models perform measurably worse as the context window fills — attention drifts, stale information leaks into new work, and the relevant signal gets buried under everything that came before it. A deliberate clear gives the model headroom for the work that's still in front of you.
 
 `/respawn` lets you reset when it helps, instead of waiting until bloat forces a degraded session later.
+
+```
+Before:  ██████████████████████░   ~180k / 200k tokens
+         exploration, dead agent transcripts, old tool output
+
+         ↓   /respawn save   →   /clear   →   /respawn load   ↓
+
+After:   █░░░░░░░░░░░░░░░░░░░░░░    ~4k / 200k tokens
+         just the checkpoint: task, plan, decisions, next steps
+```
 
 ## Install
 
