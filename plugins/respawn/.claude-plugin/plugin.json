@@ -1,0 +1,6 @@
+{
+  "name": "respawn",
+  "description": "Save and restore Claude Code session state across context clears.",
+  "version": "0.2.0",
+  "author": { "name": "Ellery", "email": "ellery@familia.me" }
+}
