@@ -1,12 +1,5 @@
 # claude-respawn-plugin
 
-```
- ___ ___ ___ ___  _____      ___  _
-| _ \ __/ __| _ \/_\ \    / / \| |
-|   / _|\__ \  _/ _ \ \/\/ /| .` |
-|_|_\___|___/_|/_/ \_\_/\_/ |_|\_|
-```
-
 **Handoff across the `/clear` barrier in Claude Code.** One command (`/respawn`) handles both directions — auto-detect when the signal is unambiguous, ask when not.
 
 ## Why
