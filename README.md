@@ -4,7 +4,9 @@ A Claude Code plugin that saves and restores session state across `/clear`. One 
 
 ## Why
 
-Long Claude Code sessions accumulate context you don't want to lose: the actual task, files touched, decisions and the alternatives you rejected, what's blocked on you. Today, `/clear` throws it all away and the next session re-litigates from scratch. `/respawn` writes that state to a private checkpoint file before you clear, and reads it back in the fresh session.
+Claude Code sessions get long. Eventually the context window fills with files you've already moved past, exploration that didn't pan out, agent transcripts, and old tool output — and you need to `/clear` to keep working effectively. But the next task is usually *continuous* with what you were just doing: same plan, same constraints, same open questions, same decisions about which alternatives you've already rejected. Today, `/clear` throws all of that away and the next session re-litigates from scratch.
+
+`/respawn` is the handoff across that forced clear. Before you clear, it writes the actual state — current task, plan to execute, files touched, decisions made (and alternatives rejected), what's blocked on you — to a private checkpoint. After the clear, the fresh session reads it back. You get the empty context window without losing the thread.
 
 ## Install
 
