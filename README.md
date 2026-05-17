@@ -11,9 +11,11 @@ Long Claude Code sessions accumulate context you don't want to lose: the actual 
 In any Claude Code session:
 
 ```
-/plugin marketplace add elleryfamilia/claude-respawn-plugin
+/plugin marketplace add https://github.com/elleryfamilia/claude-respawn-plugin
 /plugin install respawn@claude-respawn-plugin
 ```
+
+(The shorthand `/plugin marketplace add elleryfamilia/claude-respawn-plugin` also works, but uses SSH — pass the HTTPS URL if you don't have a GitHub SSH key set up.)
 
 Then restart Claude Code.
 
