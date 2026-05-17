@@ -8,6 +8,13 @@ Claude Code sessions get long. Eventually the context window fills with files yo
 
 `/respawn` is the handoff across that forced clear. Before you clear, it writes the actual state — current task, plan to execute, files touched, decisions made (and alternatives rejected), what's blocked on you — to a private checkpoint. After the clear, the fresh session reads it back. You get the empty context window without losing the thread.
 
+Two payoffs from clearing deliberately:
+
+- **Lower cost per turn.** You stop paying to re-process megabytes of stale exploration, dead-end agent transcripts, and old tool output on every subsequent message.
+- **Higher output quality.** Models perform measurably worse as the context window fills — attention drifts, stale information leaks into new work, and the relevant signal gets buried under everything that came before it. A deliberate clear gives the model headroom for the work that's still in front of you.
+
+`/respawn` lets you reset when it helps, instead of waiting until bloat forces a degraded session later.
+
 ## Install
 
 In any Claude Code session:
